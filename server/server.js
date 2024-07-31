@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;  // Ensure the correct port is used in production
 
 // Allow requests only from your frontend URL
 const corsOptions = {
