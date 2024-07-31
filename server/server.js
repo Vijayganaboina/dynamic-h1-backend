@@ -4,8 +4,13 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-app.use(cors());
+// Allow requests only from your frontend URL
+const corsOptions = {
+  origin: 'https://dynamic-h1-backend-client.vercel.app', // Your frontend URL
+  optionsSuccessStatus: 200
+};
 
+app.use(cors(corsOptions));
 
 app.use(express.json()); // Built-in JSON parser
 app.use(express.urlencoded({ extended: true })); // Built-in URL-encoded parser
