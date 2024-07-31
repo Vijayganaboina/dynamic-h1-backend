@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     const fetchH1Text = async () => {
       try {
-        const response = await axios.get('dynamic-h1-backend-4qolkey2b-vijay-kumars-projects-d38e2753.vercel.app/api/h1-text');
+        const response = await axios.get('https://dynamic-h1-backend-4qolkey2b-vijay-kumars-projects-d38e2753.vercel.app/api/h1-text');
         setH1Text(response.data.h1Text);
       } catch (error) {
         console.error('Error fetching h1 text:', error);
@@ -22,7 +22,7 @@ const App = () => {
 
   const handleUpdateText = async () => {
     try {
-      const response = await axios.post('dynamic-h1-backend-4qolkey2b-vijay-kumars-projects-d38e2753.vercel.app/api/update-h1', { newText });
+      const response = await axios.post('https://dynamic-h1-backend-4qolkey2b-vijay-kumars-projects-d38e2753.vercel.app/api/update-h1', { newText });
       if (response.data.success) {
         setH1Text(response.data.h1Text);
         setNewText('');
